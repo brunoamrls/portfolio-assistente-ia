@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Interaja com um assistente de IA treinado no meu currículo e conhecimentos.">
+    <title>Assistente de IA | Bruno Sousa</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+    <meta property="og:image" content="https://i.postimg.cc/Jzj11ZzL/esfera.png">
+    <script src="./js/ia.js" defer></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho__menu">
+            <a class="cabecalho__menu__link" href="index.html">Home</a>
+            <a class="cabecalho__menu__link" href="about.html">Sobre Mim</a>
+            <a class="cabecalho__menu__link" href="experience.html">Experiência</a>
+            <a class="cabecalho__menu__link cabecalho__menu__link--ativo" href="ai.html">
+                <img class="cabecalho__menu__icone" src="./assets/stars.png" alt="Ícone de estrelas">
+                IA
+            </a>
+            <a class="cabecalho__menu__link" href="skills.html">Competências & Qualificações</a>
+            <a class="cabecalho__menu__link" href="projects.html">Projetos</a>
+            <a class="cabecalho__menu__link" href="contact.html">Contato</a>
+        </nav>
+    </header>
+
+
+    <main class="apresentacao-ia">
+        <div class="chat-container">
+            <header class="chat-header">
+                <h1>Assistente de IA</h1>
+                <p>Faça perguntas sobre minha carreira, projetos e habilidades.</p>
+            </header>
+
+            <section id="resposta" class="chat-body">
+                <p class="placeholder">Olá! Sou um assistente treinado para responder sobre a jornada profissional do
+                    Bruno. Como posso ajudar?</p>
+            </section>
+
+            <footer class="chat-footer">
+                <form id="pergunta-form">
+                    <textarea id="pergunta-usuario" placeholder="Digite sua pergunta aqui..." rows="2"></textarea>
+                    <button id="ia-icone" type="submit" title="Enviar Pergunta">
+                        <img src="./assets/send-icon.png" alt="Enviar" />
+                    </button>
+                </form>
+            </footer>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p>Desenvolvido por Bruno Sousa</p>
+        <p class="rodape__atribuicao">
+            Ícones feitos por
+            <a href="https://www.flaticon.com/br/autores/freepik" target="_blank" title="Freepik"> Freepik</a>,
+            <a href="https://www.flaticon.com/br/autores/najmunnahar" target="_blank" title="NajmunNahar"
+                target="_blank">NajmunNahar</a>
+            via
+            <a href="https://www.flaticon.com/br/" target="_blank" title="Flaticon">Flaticon.com</a>
+        </p>
+    </footer>
+</body>
+
+</html>

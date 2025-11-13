@@ -1,0 +1,20 @@
+# --- Arquivos de Ambiente Virtual e Cache ---
+backend/.venv/
+__pycache__/
+
+# --- Segredos e Chaves de API ---
+backend/.env
+
+# --- CÓDIGO-FONTE SENSÍVEL DO BACKEND 
+backend/app.py
+
+# --- BASE DE CONHECIMENTO PRIVADA ---
+backend/base_conhecimento/
+backend/faiss_index/
+
+# --- ARQUIVOS DO SISTEMA OPERACIONAL ---
+.DS_Store
+
+# --- ARQUIVOS PESSOAIS ---
+assets/foto.png
+assets/foto2.png
