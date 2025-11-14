@@ -1,16 +1,18 @@
 #!/bin/bash
+set -e
 
 echo "🔐 Clonando repositório privado..."
 
+git clone --depth 1 https://${GITHUB_TOKEN}@github.com/brunoamrls/portfolio-backend-private.git /tmp/p
 
-git clone https://${GITHUB_TOKEN}@github.com/brunoamrls/portfolio-backend-private.git /tmp/private
+cp /tmp/p/app.py ./
+cp -r /tmp/p/base_conhecimento ./
+cp -r /tmp/p/faiss_index ./
 
+rm -rf /tmp/p
 
-cp /tmp/private/app.py ./
-cp -r /tmp/private/base_conhecimento ./
-cp -r /tmp/private/faiss_index ./
+echo "✅ Arquivos copiados!"
 
+pip install -r requirements.txt
 
-rm -rf /tmp/private
-
-echo "✅ Arquivos privados configurados com sucesso!"
+echo "✅ Build concluído!"
