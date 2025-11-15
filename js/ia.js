@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const originalPlaceholderHTML = respostaDiv.innerHTML;
 
-    const BACKEND_URL = 'http://127.0.0.1:5000/perguntar';
+    const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? 'http://127.0.0.1:5000/perguntar'
+        : 'https://bruno-portfolio-ia.onrender.com/perguntar';
     
     async function fazerPergunta(pergunta) {
         try {
@@ -37,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             respostaDiv.innerHTML = `
                 <div class="error">
                     <p>❌ <strong>Erro:</strong> Não foi possível processar sua pergunta.</p>
-                    <p><small>Verifique se o backend Python está rodando.</small></p>
+                    <p><small>Verifique se o backend está disponível.</small></p>
                     <p><small>Erro técnico: ${error.message}</small></p>
                 </div>
             `;
@@ -76,14 +78,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     perguntaInput.addEventListener('input', function() {
-
         if (perguntaInput.value.trim() === '') {
-
             respostaDiv.innerHTML = originalPlaceholderHTML;
         }
     });
 });
-
 
 async function testarBackend() {  }
 window.addEventListener('load', () => {  });
