@@ -91,6 +91,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 6.25rem;
     gap: 5.13rem;
 }
 
@@ -324,6 +325,7 @@ main {
 
 .apresentacao-vertical {
     padding: 5% 8%;
+    margin-bottom: 6.25rem;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -590,15 +592,24 @@ main {
     }
 
     .apresentacao__conteudo {
-        width: 500%;
+        width: auto;
     }
 
     .apresentacao__imagem {
         width: 70%;
     }
 
+    .bloco-conteudo,
+    .container-principal {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    /* Página do Assistente de IA */
     .apresentacao-ia {
         padding: 8% 8% 20%;
+        margin-bottom: 6.25rem;
+        margin-top: 4rem;
     }
 
     .chat-container {
@@ -606,9 +617,17 @@ main {
         height: 37.5rem;
         margin: 10%;
     }
+
+    .titulo-com-icone {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
+
+    /* CABEÇALHO */
     .cabecalho__menu {
         gap: 1.25rem;
     }
@@ -622,13 +641,55 @@ main {
         width: 1rem;
     }
 
+    /* CONTEÚDO PRINCIPAL */
     .apresentacao__conteudo {
-        width: 95%;
+        width: auto;
     }
 
+    .apresentacao__conteudo__titulo {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .apresentacao__conteudo__paragrafo {
+        font-size: 1.2rem;
+    }
+
+    /* IMAGEM */
     .apresentacao__imagem {
         width: 80%;
     }
+
+    .bloco-conteudo,
+    .container-principal,
+    .experiencia__item {
+        margin-left: 1.5%;
+        margin-right: 1.5%;
+        padding: 1.2rem;
+    }
+
+    /* EXPERIÊNCIA */
+    .experiencia__item__lista {
+        padding-left: 0.8rem;
+        font-size: 1.1rem;
+    }
+
+    .experiencia__item__titulo {
+        font-size: 1.3rem;
+        line-height: 1.4;
+    }
+
+    .experiencia__item__subtitulo {
+        font-size: 0.95rem;
+        margin-bottom: 0.8rem;
+    }
+
+    /* ÍCONES */
+    .titulo-icone {
+        width: 1.88rem;
+        height: 1.88rem;
+    }
+
 
     .projeto-card__links {
         flex-direction: column;
@@ -639,43 +700,35 @@ main {
         width: 70%;
         text-align: center;
     }
-}
 
-@media (max-width: 767px) {
-    .apresentacao__conteudo__titulo {
-        font-size: 1.8rem;
-        text-align: center;
-    }
-
-    .apresentacao__conteudo__paragrafo {
-        font-size: 1.2rem;
-    }
-
-    .cabecalho__menu__link {
-        font-size: 1.1rem;
-    }
-
-    .titulo-icone {
-        width: 1.88rem;
-        height: 1.88rem;
-    }
-
+    /* ASSISTENTE DE IA */
     .apresentacao-ia {
-        padding: 0;
+        padding: 2%;
     }
 
     .chat-container {
+        max-width: 90%;
+        width: 98%;
+        margin: 0 auto;
         height: 100%;
         border: none;
     }
 
-    .projeto-card__links {
-        flex-direction: column;
+    /* CONTATO */
+    .bloco-conteudo .contato-container {
+        gap: 0.63rem;
+
     }
 
-    .projeto-card__botao {
-        width: 50%;
-        text-align: center;
+    .contato-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .contato-links .projeto-card__botao {
+        width: 80%;
+        justify-content: center;
     }
 
     .bloco-conteudo .contato-container {

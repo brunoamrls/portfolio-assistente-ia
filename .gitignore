@@ -14,7 +14,3 @@ backend/faiss_index/
 
 # --- ARQUIVOS DO SISTEMA OPERACIONAL ---
 .DS_Store
-
-# --- ARQUIVOS PESSOAIS ---
-assets/foto.png
-assets/foto2.png
