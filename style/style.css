@@ -725,7 +725,7 @@ main {
     }
 
     .chat-conteudo {
-        padding: 1rem;
+        padding: 0;
         margin: 0;
         justify-content: flex-start;
         min-height: auto;
@@ -733,7 +733,7 @@ main {
 
     .chat-container {
         max-width: 95%;
-        width: 80%;
+        width: 90%;
         margin: 1rem auto;
         height: 600px;
         min-height: 28rem;
