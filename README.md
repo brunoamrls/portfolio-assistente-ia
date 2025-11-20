@@ -2,7 +2,7 @@
 
 > Um projeto que une minha experiência em Operações com minha jornada de aprendizado em Desenvolvimento Web e Inteligência Artificial.
 
-[![Live Demo](https://img.shields.io/badge/Acesse_o_Portfólio-3498DB?style=for-the-badge&logo=google-chrome&logoColor=white)](URL_DO_SEU_SITE_PUBLICADO)
+[![Live Demo](https://img.shields.io/badge/Acesse_o_Portfólio-3498DB?style=for-the-badge&logo=google-chrome&logoColor=white)](https://brunoamrls.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/brunoamrls/)
 
 

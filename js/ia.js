@@ -5,17 +5,30 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const originalPlaceholderHTML = respostaDiv.innerHTML;
 
-    const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-        ? 'http://127.0.0.1:5000/perguntar'
-        : 'https://bruno-portfolio-ia.onrender.com/perguntar';
+    const BACKEND_URL = 'https://bruno-portfolio-ia.onrender.com/perguntar';
     
-    async function fazerPergunta(pergunta) {
+
+    const MAX_RETRIES = 3;
+    const RETRY_DELAYS = [0, 10000, 20000]; // 0s, 10s, 20s
+    
+    async function fazerPerguntaComRetry(pergunta, tentativa = 0) {
         try {
-            respostaDiv.innerHTML = `
-                <div class="loading">
-                    <p>🤖 Processando sua pergunta...</p>
-                </div>
-            `;
+
+            if (tentativa === 0) {
+                respostaDiv.innerHTML = `
+                    <div class="loading">
+                        <p>🤖 Carregando assistente...</p>
+                        <p><small>A primeira resposta pode levar até 1 minuto enquanto o servidor inicia.</small></p>
+                    </div>
+                `;
+            } else {
+                respostaDiv.innerHTML = `
+                    <div class="loading">
+                        <p>🤖 Tentando novamente... (tentativa ${tentativa + 1}/${MAX_RETRIES})</p>
+                        <p><small>Aguarde, o servidor está iniciando...</small></p>
+                    </div>
+                `;
+            }
             
             const response = await fetch(BACKEND_URL, {
                 method: 'POST',
@@ -24,7 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 body: JSON.stringify({
                     pergunta: pergunta
-                })
+                }),
+                signal: AbortSignal.timeout(60000) // Timeout de 60 segundos
             });
             
             if (!response.ok) {
@@ -35,14 +49,30 @@ document.addEventListener('DOMContentLoaded', function() {
             exibirResposta(dados);
             
         } catch (error) {
-            console.error('Erro ao fazer pergunta:', error);
-            respostaDiv.innerHTML = `
-                <div class="error">
-                    <p>❌ <strong>Erro:</strong> Não foi possível processar sua pergunta.</p>
-                    <p><small>Verifique se o backend está disponível.</small></p>
-                    <p><small>Erro técnico: ${error.message}</small></p>
-                </div>
-            `;
+            console.error(`Erro na tentativa ${tentativa + 1}:`, error);
+            
+            if (tentativa < MAX_RETRIES - 1) {
+                const delay = RETRY_DELAYS[tentativa + 1];
+                
+                respostaDiv.innerHTML = `
+                    <div class="loading">
+                        <p>⏳ Servidor iniciando... Tentando novamente em ${delay / 1000} segundos...</p>
+                    </div>
+                `;
+                
+                setTimeout(() => {
+                    fazerPerguntaComRetry(pergunta, tentativa + 1);
+                }, delay);
+            } else {
+
+                respostaDiv.innerHTML = `
+                    <div class="error">
+                        <p>❌ <strong>Não foi possível conectar ao assistente.</strong></p>
+                        <p>O servidor pode estar temporariamente indisponível.</p>
+                        <p><small>Tente novamente em alguns instantes. Se o problema persistir, entre em contato.</small></p>
+                    </div>
+                `;
+            }
         }
     }
     
@@ -67,7 +97,8 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             return;
         }
-        fazerPergunta(pergunta);
+        
+        fazerPerguntaComRetry(pergunta);
     });
     
     perguntaInput.addEventListener('keypress', function(e) {
