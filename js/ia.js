@@ -7,10 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const BACKEND_URL = 'https://bruno-portfolio-ia.onrender.com/perguntar';
     
+    //  MODO TESTE LOCAL
+    // const BACKEND_URL = 'http://127.0.0.1:5000/perguntar';
+    
 
     const MAX_RETRIES = 3;
     const RETRY_DELAYS = [0, 10000, 20000]; // 0s, 10s, 20s
-    
+
     async function fazerPerguntaComRetry(pergunta, tentativa = 0) {
         try {
 
