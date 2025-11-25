@@ -3,12 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const botaoPerguntar = document.querySelector('button[type="submit"]');
     const respostaDiv = document.getElementById('resposta');
     
-    const originalPlaceholderHTML = respostaDiv.innerHTML;
+        const originalPlaceholderHTML = respostaDiv.innerHTML;
 
-    const BACKEND_URL = 'https://bruno-portfolio-ia.onrender.com/perguntar';
-    
-    //  MODO TESTE LOCAL
-    // const BACKEND_URL = 'http://127.0.0.1:5000/perguntar';
+    const isLocalhost = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+
+
+    const BACKEND_URL = isLocalhost 
+        ? 'http://127.0.0.1:5000/perguntar' 
+        : 'https://bruno-portfolio-ia.onrender.com/perguntar';
+
+    console.log(`Ambiente detectado: ${isLocalhost ? 'LOCAL' : 'PRODUÇÃO'}`);
+    console.log(`Conectando em: ${BACKEND_URL}`);
     
 
     const MAX_RETRIES = 3;
