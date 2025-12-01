@@ -7,16 +7,16 @@
 
 
 <div align="center">
-  <img src="https://i.postimg.cc/MpShRwHp/screenshot.png" alt="Prévia da Interface do Agente de IA">
+  <img src="https://i.postimg.cc/jdZJs05q/image.png" alt="Prévia da Interface do Assistente Virtual">
 </div>
-
+****
 ---
 
 ## 📖 Sobre o Projeto
 
 Este repositório contém o código-fonte do meu portfólio pessoal, um site que não apenas apresenta minha trajetória, mas também a demonstra na prática. O projeto nasceu do meu desejo de aplicar os conhecimentos adquiridos nos cursos de **HTML e CSS** da Alura, onde aprendi a construir sites modernos e responsivos, seguindo boas práticas de desenvolvimento.
 
-O grande diferencial é a integração de um **assistente de IA conversacional**. Inspirado na "Imersão Dev Agentes de IA com o Google", este assistente funciona como um guia interativo, capaz de responder a perguntas sobre minha carreira, projetos e competências, com base em um documento de conhecimento detalhado. Ele é a prova viva da minha busca por ser um profissional mais estratégico e completo, que utiliza a tecnologia para otimizar a comunicação e a análise de informações.
+O grande diferencial é a integração de um **assistente de IA conversacional**. Inspirado na "Imersão Dev Agentes de IA" em uma parceria entre a Alura e o Google, este assistente funciona como um guia interativo, capaz de responder a perguntas sobre minha carreira, projetos e competências, com base em um documento de conhecimento detalhado. Ele é a prova viva da minha busca por ser um profissional mais estratégico e completo, que utiliza a tecnologia para otimizar a comunicação e a análise de informações.
 
 ### 🎯 Meus Objetivos com este Projeto
 
