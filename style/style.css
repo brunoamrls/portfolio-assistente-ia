@@ -419,6 +419,18 @@ main {
     color: var(--cor-terciaria);
 }
 
+.titulo-com-icone--center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.titulo-com-icone--center .titulo-icone {
+    margin-right: 0;
+}
+
 .contato-icone {
     width: 1.5rem;
     height: 1.5rem;
@@ -627,7 +639,7 @@ main {
         margin: 0;
         min-height: auto;
     }
-    
+
     .chat-container {
         max-width: 600px;
         height: 600px;
@@ -739,7 +751,7 @@ main {
         min-height: 28rem;
         border: 0.125rem solid var(--cor-secudaria);
     }
-    
+
     .chat-descricao {
         font-size: 0.75rem;
         padding: 0 1rem;
