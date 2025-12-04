@@ -14,7 +14,7 @@ if not GOOGLE_API_KEY:
 print("Iniciando processo de criação de índice...")
 
 embeddings = GoogleGenerativeAIEmbeddings(
-    model="models/text-embedding-004",
+    model="models/gemini-embedding-001",
     google_api_key=GOOGLE_API_KEY
 )
 

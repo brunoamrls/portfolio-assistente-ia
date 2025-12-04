@@ -48,10 +48,13 @@
             <img src="./assets/linkedin2.png" alt="Ícone LinkedIn" class="contato-icone">
             LinkedIn
           </a>
-          <a href="mailto:bruno.amrl.s@gmail.com?subject=Contato%20via%20Portfólio" class="projeto-card__botao">
+          
+          <!-- E-mail Protegido: O href é preenchido via Javascript -->
+          <a href="#" id="email-protegido" class="projeto-card__botao">
             <img src="./assets/email.png" alt="Ícone Email" class="contato-icone">
             E-mail
           </a>
+
           <a class="projeto-card__botao" href="https://github.com/brunoamrls" target="_blank">
             <img src="./assets/github3.png" alt="Ícone GitHub" class="contato-icone" />GitHub
           </a>
@@ -76,6 +79,21 @@
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Divide o e-mail em partes para enganar bots simples
+        const usuario = "bruno.amrl.s";
+        const dominio = "gmail.com";
+        const assunto = "?subject=Contato%20via%20Portfólio";
+        
+        const linkEmail = document.getElementById("email-protegido");
+        
+        if(linkEmail) {
+            linkEmail.href = "mailto:" + usuario + "@" + dominio + assunto;
+        }
+    });
+  </script>
 </body>
 
 </html>
