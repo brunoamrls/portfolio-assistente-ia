@@ -49,7 +49,6 @@
             LinkedIn
           </a>
           
-          <!-- E-mail Protegido: O href é preenchido via Javascript -->
           <a href="#" id="email-protegido" class="projeto-card__botao">
             <img src="./assets/email.png" alt="Ícone Email" class="contato-icone">
             E-mail
@@ -82,7 +81,6 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Divide o e-mail em partes para enganar bots simples
         const usuario = "bruno.amrl.s";
         const dominio = "gmail.com";
         const assunto = "?subject=Contato%20via%20Portfólio";
@@ -94,6 +92,12 @@
         }
     });
   </script>
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+
 </body>
 
 </html>
