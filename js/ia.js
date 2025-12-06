@@ -49,6 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 signal: AbortSignal.timeout(60000) // Timeout de 60 segundos
             });
             
+
+            if (response.status === 403) {
+                const dadosBanimento = await response.json();
+                exibirResposta(dadosBanimento);
+                return;
+            }
+
             if (!response.ok) {
                 throw new Error(`Erro HTTP: ${response.status}`);
             }
